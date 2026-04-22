@@ -141,7 +141,7 @@ bool Board::allSafeCellsRevealed() const {
 }
 
 void Board::print() const {
-    std::cout << "\n   ";
+    std::cout << "\n    ";
     for (int i = 0; i < width; ++i) {
         std::cout << i % 10 << " ";
     }
