@@ -6,25 +6,31 @@
 
 ### Способ 1: Прямая компиляция (рекомендуется)
 
-```bash
 # Клонируйте или скачайте проект
+```bash
 cd minesweeper-game
+```
 
 # Скомпилируйте
+```bash
 g++ -std=c++11 main.cpp Board.cpp Game.cpp utils.cpp -o minesweeper
+```
 
 # Запустите
 ./minesweeper
 
 ### Способ 2: CMake
 
-```bash
 # Клонируйте или скачайте проект
+```bash
 cd minesweeper-game
+```
 
 # Введите
+```bash
 cd minesweeper-game
 mkdir build && cd build
 cmake ..
 make
 ./minesweeper
+```
