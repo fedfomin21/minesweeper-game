@@ -17,7 +17,9 @@ g++ -std=c++11 main.cpp Board.cpp Game.cpp utils.cpp -o minesweeper
 ```
 
 # Запустите
+```bash
 ./minesweeper
+```
 
 ### Способ 2: CMake
 
