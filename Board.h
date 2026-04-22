@@ -14,12 +14,12 @@ private:
     std::vector<std::vector<bool>> revealed;
     std::vector<std::vector<bool>> flagged;
 
-    void initMines(int firstRow, int firstCol);
     int countAdjacentMines(int row, int col) const;
 
 public:
     Board(int w, int h, int minesCount);
     
+    void initMines(int firstRow, int firstCol);
     void revealCell(int row, int col);
     void toggleFlag(int row, int col);
     bool isMine(int row, int col) const;

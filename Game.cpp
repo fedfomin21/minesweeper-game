@@ -3,8 +3,12 @@
 #include <limits>
 
 Game::Game(int w, int h, int mines) 
-    : board(w, h, mines), state(GameState::PLAYING), 
-      minesInitialized(false), width(w), height(h), mineCount(mines) {}
+    : board(w, h, mines)
+    , state(GameState::PLAYING)
+    , minesInitialized(false)
+    , width(w)
+    , height(h)
+    , mineCount(mines) {}
 
 void Game::showHelp() const {
     std::cout << "\n=== CONTROLS ===\n";
@@ -16,7 +20,7 @@ void Game::showHelp() const {
 }
 
 bool Game::isValidPosition(int row, int col) const {
-    return row >= 0 && row < width && col >= 0 && col < height;
+    return row >= 0 && row < height && col >= 0 && col < width;
 }
 
 void Game::handleInput(int row, int col, char action) {
@@ -30,7 +34,8 @@ void Game::handleInput(int row, int col, char action) {
     } 
     else if (action == 'o') {
         if (!minesInitialized) {
-            std::cout << "Note: Mines will be placed after first move\n";
+            std::cout << "Placing mines...\n";
+            board.initMines(row, col);
             minesInitialized = true;
         }
         
@@ -64,7 +69,8 @@ void Game::run() {
     showHelp();
     
     char action;
-    int row, col;
+    int row;
+    int col;
     
     while (state == GameState::PLAYING) {
         board.print();

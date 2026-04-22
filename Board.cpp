@@ -145,7 +145,7 @@ void Board::print() const {
     for (int i = 0; i < width; ++i) {
         std::cout << i % 10 << " ";
     }
-    std::cout << "\n   ";
+    std::cout << "\n    ";
     for (int i = 0; i < width; ++i) {
         std::cout << "--";
     }
